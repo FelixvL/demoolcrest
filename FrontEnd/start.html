@@ -4,8 +4,18 @@ FrontEnd
         console.log("naar de backend");
         fetch('http://localhost:8082/methode1');
     }
+    function gaNaarBackend2(){
+        let deeigenaar = document.getElementById("eigenaarinput").value;
+        let url = 'http://localhost:8082/methode2/'+deeigenaar;
+        console.log(url);
+        fetch(url);
+    }
 </script>
 
 
 
+
 <button onclick="gaNaarBackend()">Klik hier</button>
+<hr>
+Wie wordt de eigenaar:<input id="eigenaarinput">
+<button onclick="gaNaarBackend2()">Klik hier</button>
