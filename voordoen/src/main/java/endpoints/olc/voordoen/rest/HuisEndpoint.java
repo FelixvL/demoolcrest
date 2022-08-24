@@ -53,6 +53,7 @@ public class HuisEndpoint {
 	@PostMapping("methode8")
 	public void methode8(@RequestBody Huis huis) {
 		System.out.println("methode7" + huis.getEigenaar());
+		hs.opslaan(huis);
 		
 	}
 }

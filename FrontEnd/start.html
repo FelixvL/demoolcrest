@@ -42,6 +42,19 @@ FrontEnd
         startString += "</table>"
         document.getElementById("mijndiv3").innerHTML = startString;
     }
+    function gaNaarBackend7(){
+        console.log("naar de backend");
+        let hetHuisObj = {};
+        hetHuisObj.eigenaar = document.getElementById("eigenaarinputpost").value;
+        let hetHuisJSON = JSON.stringify(hetHuisObj);
+        fetch('http://localhost:8082/methode8',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: hetHuisJSON
+        });
+    }
 </script>
 
 
@@ -60,3 +73,7 @@ Wie wordt de eigenaar:<input id="eigenaarinput">
 <hr>
 <button onclick="gaNaarBackend6()">Klik hier</button>
 <div id="mijndiv3"></div>
+<hr>
+Wie wordt de eigenaar POST:<input id="eigenaarinputpost">
+<button onclick="gaNaarBackend7()">Klik hier</button>
+<hr>

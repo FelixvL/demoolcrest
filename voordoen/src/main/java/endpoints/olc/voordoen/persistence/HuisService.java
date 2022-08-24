@@ -36,4 +36,10 @@ public class HuisService {
 		return hr.findAll();
 	}
 
+
+	public void opslaan(Huis huis) {
+		hr.save(huis);
+		
+	}
+
 }
