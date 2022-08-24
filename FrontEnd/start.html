@@ -28,6 +28,20 @@ FrontEnd
     function nieuwefunctie2(infovanserver){
         document.getElementById("mijndiv2").innerHTML = infovanserver.prijs;
     }
+    function gaNaarBackend6(){
+        console.log("naar de backend");
+        fetch('http://localhost:8082/methode7')
+            .then( qqq => qqq.json() )
+            .then( data => nieuwefunctie3(data))
+    }
+    function nieuwefunctie3(infovanserver){
+        let startString = "<table border=1>";
+        for(var x = 0; x < infovanserver.length ; x++){
+            startString += `<tr><td>${infovanserver[x].eigenaar}</td></tr>`;
+        }
+        startString += "</table>"
+        document.getElementById("mijndiv3").innerHTML = startString;
+    }
 </script>
 
 
@@ -43,3 +57,6 @@ Wie wordt de eigenaar:<input id="eigenaarinput">
 <hr>
 <button onclick="gaNaarBackend5()">Klik hier</button>
 <div id="mijndiv2"></div>
+<hr>
+<button onclick="gaNaarBackend6()">Klik hier</button>
+<div id="mijndiv3"></div>

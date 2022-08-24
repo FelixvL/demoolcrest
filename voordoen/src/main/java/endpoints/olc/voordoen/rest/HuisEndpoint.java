@@ -3,6 +3,8 @@ package endpoints.olc.voordoen.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import endpoints.olc.voordoen.domein.Huis;
@@ -37,5 +39,20 @@ public class HuisEndpoint {
 	public Huis methode5() {
 		System.out.println("methode5");
 		return new Huis();
+	}
+	@GetMapping("methode6")
+	public Huis methode6() {
+		System.out.println("methode6");
+		return hs.methode3();
+	}
+	@GetMapping("methode7")
+	public Iterable<Huis> methode7() {
+		System.out.println("methode7");
+		return hs.methode4();
+	}
+	@PostMapping("methode8")
+	public void methode8(@RequestBody Huis huis) {
+		System.out.println("methode7" + huis.getEigenaar());
+		
 	}
 }

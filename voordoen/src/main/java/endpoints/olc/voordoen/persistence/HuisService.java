@@ -1,5 +1,7 @@
 package endpoints.olc.voordoen.persistence;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,15 @@ public class HuisService {
 		Huis huis1 = new Huis();
 		huis1.setEigenaar(owner);
 		hr.save(huis1);		
+	}
+	public Huis methode3() {
+		long id = 3;
+		Optional<Huis> huis = hr.findById(id);
+		Huis huisEcht = huis.get();
+		return huisEcht;
+	}
+	public Iterable<Huis> methode4() {
+		return hr.findAll();
 	}
 
 }
