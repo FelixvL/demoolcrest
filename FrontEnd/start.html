@@ -10,6 +10,24 @@ FrontEnd
         console.log(url);
         fetch(url);
     }
+    function gaNaarBackend4(){
+        console.log("naar de backend");
+        fetch('http://localhost:8082/methode4')
+            .then( qqq => qqq.text() )
+            .then( data => nieuwefunctie(data))
+    }
+    function nieuwefunctie(infovanserver){
+        document.getElementById("mijndiv1").innerHTML = infovanserver
+    }
+    function gaNaarBackend5(){
+        console.log("naar de backend");
+        fetch('http://localhost:8082/methode5')
+            .then( qqq => qqq.json() )
+            .then( data => nieuwefunctie2(data))
+    }
+    function nieuwefunctie2(infovanserver){
+        document.getElementById("mijndiv2").innerHTML = infovanserver.prijs;
+    }
 </script>
 
 
@@ -19,3 +37,9 @@ FrontEnd
 <hr>
 Wie wordt de eigenaar:<input id="eigenaarinput">
 <button onclick="gaNaarBackend2()">Klik hier</button>
+<hr>
+<button onclick="gaNaarBackend4()">Klik hier</button>
+<div id="mijndiv1"></div>
+<hr>
+<button onclick="gaNaarBackend5()">Klik hier</button>
+<div id="mijndiv2"></div>

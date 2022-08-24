@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import endpoints.olc.voordoen.domein.Huis;
 import endpoints.olc.voordoen.persistence.HuisService;
 
 @RestController
@@ -26,5 +27,15 @@ public class HuisEndpoint {
 	public void methode3(@PathVariable("eigenaar") String owner, @PathVariable("huisnummer") int hn) {
 		System.out.println("het endpoint is aangeroepen"+owner);
 		hs.methode2(owner);
+	}
+	@GetMapping("methode4")
+	public String methode4() {
+		System.out.println("methode4");
+		return "hoi";
+	}
+	@GetMapping("methode5")
+	public Huis methode5() {
+		System.out.println("methode5");
+		return new Huis();
 	}
 }
